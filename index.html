@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mes chansons</title>
+    <style>
+        body {
+            background-color: #000;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+        .number {
+            position: absolute;
+            top: 30px;
+            font-size: 36px;
+            font-weight: bold;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #num4 { left: 10%; }
+        #num5 { left: 35%; }
+        #num6 { left: 60%; }
+        #num7 { left: 85%; }
+        audio {
+            margin-top: 20px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="bernard_paroles_musique.png" alt="Bernard Auteur Compositeur" width="720">
+        <div class="number" id="num4" onclick="playSong('instrumental_no_breath_after_you.mp3')">4</div>
+        <div class="number" id="num5" onclick="playSong('attrape_ma_main.mp3')">5</div>
+        <div class="number" id="num6" onclick="playSong('chanson_de_diego.m4a')">6</div>
+        <div class="number" id="num7" onclick="playSong('alexia_ava_cest_toi.mp3')">7</div>
+    </div>
+    <audio id="player" controls></audio>
+    <script>
+        function playSong(src) {
+            const player = document.getElementById("player");
+            player.src = src;
+            player.play();
+        }
+    </script>
+</body>
+</html>
